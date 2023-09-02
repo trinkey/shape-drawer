@@ -63,14 +63,6 @@ class Quadrilateral:
         quad = [(x1, y1), (x2, y2), (x3, y3), (x4, y4)]
         return (pointInQuad((x, y), quad), self.color)
 
-def pad(original: str, maxLength: int, padding: str="0") -> str:
-    if len(original) > maxLength:
-        return original[:2:]
-    elif len(original) == maxLength:
-        return original
-    else:
-        return padding * (maxLength - len(original)) + original
-
 def calcPixelColor(x: int, y: int) -> Color:
     for i in shapes:
         c = i.inShape(x, y)
